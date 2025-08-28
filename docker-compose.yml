@@ -1,0 +1,14 @@
+services:
+  api:
+    container_name: atheris-api-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/app
+      - /app/node_modules # Ignore node_modules in the host

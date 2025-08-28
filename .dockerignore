@@ -1,0 +1,21 @@
+# build output
+dist
+node_modules
+
+# git
+.git
+.gitignore
+
+# docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# development
+.vscode
+.env
+npm-debug.log
+pnpm-debug.log
+yarn-error.log
+.husky
+.cursor
