@@ -12,3 +12,20 @@ services:
     volumes:
       - .:/app
       - /app/node_modules # Ignore node_modules in the host
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16-alpine
+    container_name: atheris-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: atheris
+      POSTGRES_PASSWORD: atheris
+      POSTGRES_DB: atheris
+    volumes:
+      - atheris-pgdata:/var/lib/postgresql/data
+
+volumes:
+  atheris-pgdata:
